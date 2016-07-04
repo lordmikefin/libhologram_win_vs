@@ -1,0 +1,4 @@
+[submodule "src/libhologram_core_src"]
+	path = src/libhologram_core_src
+	url = https://github.com/lordmikefin/libhologram_core_src.git
+	branch = win_vs

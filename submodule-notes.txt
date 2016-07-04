@@ -1,0 +1,17 @@
+
+https://git-scm.com/book/en/v2/Git-Tools-Submodules
+
+--
+
+Add submodule to project
+$ cd src/
+$ git submodule add https://github.com/lordmikefin/libhologram_core_src.git
+$ cd ..
+
+Define branch for submodule (config is stored in the project)
+$ git config -f .gitmodules submodule.src/libhologram_core_src.branch win_vs
+$ git submodule update --remote
+$ cd src/libhologram_core_src/
+$ git checkout win_vs
+
+--
