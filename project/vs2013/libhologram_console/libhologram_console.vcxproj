@@ -21,10 +21,14 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\src\console\libhologram_console.cpp" />
     <ClCompile Include="..\..\..\src\console\stdafx.cpp" />
+    <ClCompile Include="..\..\..\src\libhologram_core_src\hwCheck.cpp">
+      <FileType>CppCode</FileType>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\console\stdafx.h" />
     <ClInclude Include="..\..\..\src\console\targetver.h" />
+    <ClInclude Include="..\..\..\src\libhologram_core_src\hwCheck.h" />
   </ItemGroup>
   <ItemGroup>
     <CudaCompile Include="..\..\..\src\libhologram_core_src\cudaAdd.cu">
