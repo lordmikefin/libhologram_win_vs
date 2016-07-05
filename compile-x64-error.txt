@@ -1,0 +1,21 @@
+
+When building x64 project you might get following error from nvidia compiler:
+
+1>  nvcc fatal   : Microsoft Visual Studio configuration file 'vcvars64.bat' could not be found for installation at 'C:/Program Files (x86)/Microsoft Visual Studio 12.0/VC/bin/x86_amd64/../../..'
+--
+
+http://stackoverflow.com/questions/18727964/nvcc-exe-linking-error-microsoft-visual-studio-configuration-file-vcvars64-bat
+--
+
+It seems that batch file exists. It just is in wrong location and has wrong name :(
+
+Needed file actually exists in:
+C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\vcvarsx86_amd64.bat
+
+So copy the file into:
+C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\amd64\vcvars64.bat
+--
+
+This might not be the best solution, but it worked for me :)
+
+-- LordMike

@@ -1,0 +1,3 @@
+
+Simpler way to clone the project and all included submodules
+$ git clone --recursive https://github.com/lordmikefin/libhologram_win_vs.git
