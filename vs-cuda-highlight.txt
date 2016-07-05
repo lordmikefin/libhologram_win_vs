@@ -1,0 +1,10 @@
+
+http://stackoverflow.com/questions/14827160/how-do-i-enable-syntax-highlighting-of-cuda-cu-files-in-visual-studio-2010
+
+--
+
+Tools -> Options -> Text Editor -> File Extension
+
+Type in "cu" (Extension:) and select "Microsoft Visual C++" as the editor and click add.
+
+Same for "cuh" header files too.
