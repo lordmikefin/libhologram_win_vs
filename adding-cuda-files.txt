@@ -1,0 +1,18 @@
+
+https://devtalk.nvidia.com/default/topic/774168/how-to-use-the-cuda-toolkit-v6-5-with-vs-express-2013-/
+
+--
+
+First make sure project is using CUDA settings.
+
+Right click on the project (name) and select Build Dependencies... -> Build Customizations...
+From the dialog, select the CUDA 6.5 (.targets,.props) checkbox, and click OK
+
+--
+
+
+After adding new cuda files to project, make sure they are handled by CUDA compiler.
+
+Open file properties by right click on the file and select Properties.
+  [Properties -> Configuration Properties -> General -> Item Type ]
+Set "Item Type" to CUDA C/C++

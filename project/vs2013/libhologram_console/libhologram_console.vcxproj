@@ -26,6 +26,15 @@
     <ClInclude Include="..\..\..\src\console\stdafx.h" />
     <ClInclude Include="..\..\..\src\console\targetver.h" />
   </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="..\..\..\src\libhologram_core_src\cudaAdd.cu">
+      <FileType>CppCode</FileType>
+      <TargetMachinePlatform Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">64</TargetMachinePlatform>
+    </CudaCompile>
+    <ClInclude Include="..\..\..\src\libhologram_core_src\cudaAdd.cuh">
+      <FileType>CppHeader</FileType>
+    </ClInclude>
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{C55152A0-8FA0-447F-A622-F92F32FE472D}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -60,6 +69,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 6.5.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
@@ -101,11 +111,23 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\libhologram_core_src;%(AdditionalIncludeDirectories);$(CudaToolkitIncludeDir)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(CUDA_PATH)/lib/Win32;%(AdditionalLibraryDirectories);$(CudaToolkitLibDir)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>cuda.lib;cudart.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <CudaCompile>
+      <Include>$(CUDA_PATH)/include;$(SolutionDir)..\..\src\libhologram_core_src;$(ProjectDir);./</Include>
+    </CudaCompile>
+    <CudaLink>
+      <AdditionalLibraryDirectories>$(CUDA_PATH)/lib/Win32</AdditionalLibraryDirectories>
+    </CudaLink>
+    <CudaLink>
+      <AdditionalDependencies>cuda.lib</AdditionalDependencies>
+    </CudaLink>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -156,5 +178,6 @@
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 6.5.targets" />
   </ImportGroup>
 </Project>

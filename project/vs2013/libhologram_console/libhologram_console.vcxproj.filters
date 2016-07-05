@@ -23,5 +23,13 @@
     <ClInclude Include="..\..\..\src\console\targetver.h">
       <Filter>header</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\src\libhologram_core_src\cudaAdd.cuh">
+      <Filter>header</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="..\..\..\src\libhologram_core_src\cudaAdd.cu">
+      <Filter>src</Filter>
+    </CudaCompile>
   </ItemGroup>
 </Project>

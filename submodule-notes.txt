@@ -15,3 +15,18 @@ $ cd src/libhologram_core_src/
 $ git checkout win_vs
 
 --
+
+Show submodule difference
+$ git diff --submodule
+
+Set config to show submodules w/o --submodule parameter
+$ git config --global diff.submodule log
+$ git diff
+
+--
+
+Show status also from submodule (local config - is not stored in the project)
+$ git config status.submodulesummary 1
+$ git status
+
+--
