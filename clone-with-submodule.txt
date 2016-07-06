@@ -1,3 +1,10 @@
 
 Simpler way to clone the project and all included submodules
 $ git clone --recursive https://github.com/lordmikefin/libhologram_win_vs.git
+
+
+If you clone just the main project then you need to initialize and update all submodules.
+$ git clone https://github.com/lordmikefin/libhologram_win_vs.git
+$ cd libhologram_win_vs/
+$ git submodule init
+$ git submodule update
